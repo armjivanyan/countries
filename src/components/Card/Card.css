@@ -1,0 +1,15 @@
+.card {
+  background-color: #272727;
+  margin-bottom: 3vw;
+}
+
+.card h3 {
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: 1vw;
+}
+
+.card h3:active,
+.card h3:hover {
+  color: #ffa500;
+}

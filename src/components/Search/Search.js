@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useRef } from "react";
 import { InputGroup, FormControl, Row } from "react-bootstrap";
 import "./Search.css";
@@ -31,11 +30,12 @@ const Search = ({
     <Row className="search">
       <div className="col-12">
         <InputGroup size="lg">
-          <InputGroup.Text id="inputGroup-sizing-lg">Search</InputGroup.Text>
           <FormControl
             ref={inputElement}
+            placeholder="Search. . ."
+            className="searchInput"
             aria-label="Large"
-            aria-describedby="inputGroup-sizing-sm"
+            aria-describedby="inputGroup-sizing-lg"
             onChange={(e) => handleInput(e)}
           />
         </InputGroup>

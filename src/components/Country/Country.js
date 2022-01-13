@@ -1,14 +1,15 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
-import { getCountryByName } from "../../helpers/getCountryByName.helpers";
 import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
+import { getCountryByName } from "../../helpers/getCountryByName.helpers";
+import { Button, Col, Row } from "react-bootstrap";
+import "./Country.css";
 
 const Country = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [curCountry, setCurCountry] = useState(null);
-  let { name } = useParams();
+  const { name } = useParams();
+
   async function loadCountry() {
     const tmpCountry = await getCountryByName(name);
     setCurCountry(tmpCountry);
@@ -22,19 +23,19 @@ const Country = () => {
 
   const country = () => {
     return (
-      <>
-        <Col xs={12}>
+      <Row className="country">
+        <Col xs={12} className="backCol">
           <Link to={"/"}>
-            <h1>Back</h1>
+            <Button variant="primary">
+              <h3>Back</h3>
+            </Button>
           </Link>
         </Col>
-        <Col xs={12}>
+        <Col xs={12} className="imgCol">
           <h1>{curCountry[0].name}</h1>
+          <img alt={`${name}'s flag`} src={curCountry[0].flags.png} />
         </Col>
-        <Col xs={10} offset={1}>
-          <img src={curCountry[0].flags.png} />
-        </Col>
-      </>
+      </Row>
     );
   };
 

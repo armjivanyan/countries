@@ -1,9 +1,9 @@
-import { Container } from "react-bootstrap";
-import "./App.css";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import Country from "./components/Country/Country";
+import { Container } from "react-bootstrap";
+import "./App.css";
 
 function App() {
   const [searchText, setSearchText] = useState("");
